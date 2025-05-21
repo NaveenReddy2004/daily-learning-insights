@@ -1,7 +1,8 @@
 {
   "2025-05-21": {
-    "topic": "Color Psychology in UX Design",
-    "insight": "Colors influence user emotions. For example, blue builds trust, while red grabs attention. Brands like Facebook use blue for a reason.",
-    "link": "https://uxdesign.cc/color-psychology-ux"
+    "stage": "Intermediate",
+    "topic": "Python OOP",
+    "insight": "Object-oriented programming in Python helps break complex problems into smaller reusable components. For instance, classes and objects are used in web frameworks like Django to build robust apps.",
+    "link": "https://www.google.com/search?q=Python+OOP"
   }
 }
