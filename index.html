@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily Learning Insight</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9fafb;
+      color: #333;
+      max-width: 600px;
+      margin: 3rem auto;
+      padding: 1rem;
+    }
+    section {
+      background: #e2e8f0;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    }
+    a {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <section id="daily-learning">
+    <h2>🔍 Daily Learning Insight</h2>
+    <div id="insight-container">Loading insight...</div>
+  </section>
+
+  <script>
+    async function loadDailyInsight() {
+      const today = new Date().toISOString().split("T")[0];
+
+      try {
+        const res = await fetch('dailyInsights.json');
+        const insights = await res.json();
+        const todayInsight = insights[today];
+        const container = document.getElementById('insight-container');
+
+        if (todayInsight) {
+          container.innerHTML = `
+            <p><strong>Topic:</strong> ${todayInsight.topic}</p>
+            <p><strong>Insight:</strong> ${todayInsight.insight}</p>
+            <p><strong>Link:</strong> <a href="${todayInsight.link}" target="_blank" rel="noopener noreferrer">Learn more</a></p>
+          `;
+        } else {
+          container.innerHTML = '<p>No insight available for today.</p>';
+        }
+      } catch (err) {
+        console.error('Error loading insight:', err);
+        document.getElementById('insight-container').innerText = 'Error loading insight.';
+      }
+    }
+
+    loadDailyInsight();
+  </script>
+</body>
+</html>
