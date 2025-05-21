@@ -1,0 +1,22 @@
+{
+  "Beginner": [
+    "HTML Basics",
+    "Python Basics",
+    "What is Git?"
+  ],
+  "Intermediate": [
+    "REST APIs",
+    "Python OOP",
+    "Intro to ML"
+  ],
+  "Advanced": [
+    "LLM Fine-Tuning",
+    "Docker + Kubernetes",
+    "MLOps"
+  ],
+  "Goal-Oriented": [
+    "Resume Tips",
+    "Portfolio Projects",
+    "Mock Interviews"
+  ]
+}
